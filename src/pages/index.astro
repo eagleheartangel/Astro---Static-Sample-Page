@@ -1,0 +1,17 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+// Server Only
+const name = "My home page";
+---
+
+<MainLayout title="Home Page">
+  <h1 class="text-3xl font-bold underline">{name}</h1>
+
+  <p id="current-time">Actual time:</p>
+
+  <script>
+    const currentTime = document.getElementById("current-time") as HTMLElement;
+    currentTime.innerText = `Actual time: ${new Date().toLocaleString()}`;
+  </script>
+</MainLayout>
